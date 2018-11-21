@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Letme</title>
   <icon>https://www.gravatar.com/avatar/86707a7290a5bc5768aad018eafa91d8</icon>
-  <subtitle>letme</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
