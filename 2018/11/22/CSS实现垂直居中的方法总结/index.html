@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>CSS实现垂直居中的方法总结  | Letme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#000000">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。 1. 使用绝对定位和负外边距对块级元素进行垂直居中html代码123&amp;lt;div id=&amp;quot;box&amp;quot;&amp;gt;    &amp;lt;div id=&amp;quot;child&amp;quot;&amp;gt;我是测试DIV&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; css代码：12345678910111213141">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS实现垂直居中的方法总结 ">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/index.html">
+<meta property="og:site_name" content="Letme">
+<meta property="og:description" content="注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。 1. 使用绝对定位和负外边距对块级元素进行垂直居中html代码123&amp;lt;div id=&amp;quot;box&amp;quot;&amp;gt;    &amp;lt;div id=&amp;quot;child&amp;quot;&amp;gt;我是测试DIV&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; css代码：12345678910111213141">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-22T03:34:47.628Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS实现垂直居中的方法总结 ">
+<meta name="twitter:description" content="注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。 1. 使用绝对定位和负外边距对块级元素进行垂直居中html代码123&amp;lt;div id=&amp;quot;box&amp;quot;&amp;gt;    &amp;lt;div id=&amp;quot;child&amp;quot;&amp;gt;我是测试DIV&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; css代码：12345678910111213141">
+    
+        <link rel="alternate" type="application/atom+xml" title="Letme" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">兔子先生</h5>
+          <a href="mailto:1246755863@qq.com" title="1246755863@qq.com" class="mail">1246755863@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/tooyoungtobeloved/tooyoungtobeloved.github.io" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/5489923048/profile?topnav=1&wvr=6" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CSS实现垂直居中的方法总结 </div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CSS实现垂直居中的方法总结 </h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-22T02:20:01.000Z" itemprop="datePublished" class="page-time">
+  2018-11-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。"><span class="post-toc-number">1.</span> <span class="post-toc-text">注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-使用绝对定位和负外边距对块级元素进行垂直居中"><span class="post-toc-number"></span> <span class="post-toc-text">1. 使用绝对定位和负外边距对块级元素进行垂直居中</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#html代码"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">html代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#css代码："><span class="post-toc-number">0.2.</span> <span class="post-toc-text">css代码：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#这个方法兼容性不错，但是有一个小缺点：必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">这个方法兼容性不错，但是有一个小缺点：必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-使用绝对定位和transform"><span class="post-toc-number"></span> <span class="post-toc-text">2. 使用绝对定位和transform</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码："><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码"><span class="post-toc-number">2.</span> <span class="post-toc-text">css代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-另外一种使用绝对定位和负外边距进行垂直居中的方式"><span class="post-toc-number"></span> <span class="post-toc-text">3. 另外一种使用绝对定位和负外边距进行垂直居中的方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码-1"><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">css代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#这种方式的原理实质上和前两种相同。补充的一点是：margin的取值也可以是百分比，这时这个值规定了该元素基于父元素尺寸的百分比，可以根据实际的使用场景来决定是用具体的数值还是用百分比。"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">这种方式的原理实质上和前两种相同。补充的一点是：margin的取值也可以是百分比，这时这个值规定了该元素基于父元素尺寸的百分比，可以根据实际的使用场景来决定是用具体的数值还是用百分比。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-绝对定位结合margin-auto"><span class="post-toc-number"></span> <span class="post-toc-text">4. 绝对定位结合margin: auto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#html代码：-1"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">html代码：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码：-1"><span class="post-toc-number">1.</span> <span class="post-toc-text">css代码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这种实现方式的两个核心是：把要垂直居中的元素相对于父元素绝对定位，top和bottom设为相等的值，我这里设成了0，"><span class="post-toc-number">2.</span> <span class="post-toc-text">这种实现方式的两个核心是：把要垂直居中的元素相对于父元素绝对定位，top和bottom设为相等的值，我这里设成了0，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#当然你也可以设为99999px或者-99999px无论什么，只要两者相等就行，这一步做完之后再将要居中元素的margin设为auto，这样便可以实现垂直居中了。"><span class="post-toc-number">3.</span> <span class="post-toc-text">当然你也可以设为99999px或者-99999px无论什么，只要两者相等就行，这一步做完之后再将要居中元素的margin设为auto，这样便可以实现垂直居中了。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#被居中元素的宽高也可以不设置，但不设置的话就必须是图片这种自身就包含尺寸的元素，否则无法实现。"><span class="post-toc-number">4.</span> <span class="post-toc-text">被居中元素的宽高也可以不设置，但不设置的话就必须是图片这种自身就包含尺寸的元素，否则无法实现。</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-使用padding实现子元素的垂直居中"><span class="post-toc-number"></span> <span class="post-toc-text">5. 使用padding实现子元素的垂直居中</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码：-2"><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#css代码：-2"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">css代码：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这种实现方式非常简单，就是给父元素设置相等的上下内边距，则子元素自然是垂直居中的，当然这时候父元素是不能设置高度的，要让它自动被填充起来，除非设置了一个正好等于上内边距-子元素高度-下内边距的值，否则无法精确的垂直居中。这种方式看似没有什么技术含量，但其实在某些场景下也是非常好用的。"><span class="post-toc-number">2.</span> <span class="post-toc-text">这种实现方式非常简单，就是给父元素设置相等的上下内边距，则子元素自然是垂直居中的，当然这时候父元素是不能设置高度的，要让它自动被填充起来，除非设置了一个正好等于上内边距+子元素高度+下内边距的值，否则无法精确的垂直居中。这种方式看似没有什么技术含量，但其实在某些场景下也是非常好用的。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-设置第三方基准"><span class="post-toc-number"></span> <span class="post-toc-text">6. 设置第三方基准</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码：-3"><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码：-3"><span class="post-toc-number">2.</span> <span class="post-toc-text">css代码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这种方式也非常简单，首先设置一个高度等于父元素高度一半的第三方基准元素，那么此时该基准元素的底边线自然就是父元素纵向上的中分线，做完这些之后再给要垂直居中的元素设置一个margin-top，值的大小是它自身高度的一半取负，则实现垂直居中。"><span class="post-toc-number">3.</span> <span class="post-toc-text">　这种方式也非常简单，首先设置一个高度等于父元素高度一半的第三方基准元素，那么此时该基准元素的底边线自然就是父元素纵向上的中分线，做完这些之后再给要垂直居中的元素设置一个margin-top，值的大小是它自身高度的一半取负，则实现垂直居中。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-使用flex布局"><span class="post-toc-number"></span> <span class="post-toc-text">7. 使用flex布局</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码：-4"><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码-2"><span class="post-toc-number">2.</span> <span class="post-toc-text">css代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这种方式同样适用于块级元素："><span class="post-toc-number">3.</span> <span class="post-toc-text">这种方式同样适用于块级元素：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码：-5"><span class="post-toc-number">4.</span> <span class="post-toc-text">html代码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码：-4"><span class="post-toc-number">5.</span> <span class="post-toc-text">css代码：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-第二种使用弹性布局的方式"><span class="post-toc-number"></span> <span class="post-toc-text">8. 第二种使用弹性布局的方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码-2"><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码：-5"><span class="post-toc-number">2.</span> <span class="post-toc-text">css代码：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#这种方式也是首先给父元素设置display-flex，设置好之后改变主轴的方向flex-direction-column，该属性可能的取值有四个，分别如下："><span class="post-toc-number">2.0.0.0.1.</span> <span class="post-toc-text">这种方式也是首先给父元素设置display:flex，设置好之后改变主轴的方向flex-direction: column，该属性可能的取值有四个，分别如下：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#justify-content属性定义了项目在主轴上的对齐方式，可能的取值有五个，分别如下（不过具体的对齐方式与主轴的方向有关，以下的值都是假设主轴为从左到右的）："><span class="post-toc-number">2.0.0.0.2.</span> <span class="post-toc-text">justify-content属性定义了项目在主轴上的对齐方式，可能的取值有五个，分别如下（不过具体的对齐方式与主轴的方向有关，以下的值都是假设主轴为从左到右的）：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-还有一种在前面已经见到过很多次的方式就是使用-line-height-对单行文本进行垂直居中"><span class="post-toc-number"></span> <span class="post-toc-text">9. 还有一种在前面已经见到过很多次的方式就是使用 line-height 对单行文本进行垂直居中</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码：-6"><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码-3"><span class="post-toc-number">2.</span> <span class="post-toc-text">css代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里有一个小坑需要大家注意：line-height-行高-的值不能设为100-，我们来看看官方文档中给出的关于line-height取值为百分比时候的描述：基于当前字体尺寸的百分比行间距。所以大家就明白了，这里的百分比并不是相对于父元素尺寸而言，而是相对于字体尺寸来讲的。"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">这里有一个小坑需要大家注意：line-height(行高) 的值不能设为100%，我们来看看官方文档中给出的关于line-height取值为百分比时候的描述：基于当前字体尺寸的百分比行间距。所以大家就明白了，这里的百分比并不是相对于父元素尺寸而言，而是相对于字体尺寸来讲的。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-使用-line-height-和-vertical-align-对图片进行垂直居中"><span class="post-toc-number"></span> <span class="post-toc-text">10. 使用 line-height 和 vertical-align 对图片进行垂直居中</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html代码-3"><span class="post-toc-number">1.</span> <span class="post-toc-text">html代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css代码-4"><span class="post-toc-number">2.</span> <span class="post-toc-text">css代码</span></a></li></ol>
+        </li></nav>
+    </aside>
+
+
+<article id="post-CSS实现垂直居中的方法总结" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CSS实现垂直居中的方法总结 </h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-22 10:20:01" datetime="2018-11-22T02:20:01.000Z" itemprop="datePublished">2018-11-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。"><a href="#注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。" class="headerlink" title="注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。"></a>注：以下demo都只是针对现代浏览器所做，未兼容低版本的IE以及其它非主流浏览器。</h2><hr>
+<h1 id="1-使用绝对定位和负外边距对块级元素进行垂直居中"><a href="#1-使用绝对定位和负外边距对块级元素进行垂直居中" class="headerlink" title="1. 使用绝对定位和负外边距对块级元素进行垂直居中"></a>1. 使用绝对定位和负外边距对块级元素进行垂直居中</h1><h3 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;我是测试DIV&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="css代码："><a href="#css代码：" class="headerlink" title="css代码："></a>css代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    width: 150px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: orange;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin: -50px 0 0 0;</span><br><span class="line">    line-height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="这个方法兼容性不错，但是有一个小缺点：必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。"><a href="#这个方法兼容性不错，但是有一个小缺点：必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。" class="headerlink" title="这个方法兼容性不错，但是有一个小缺点：必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。"></a>这个方法兼容性不错，但是有一个小缺点：必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。</h3><hr>
+<h1 id="2-使用绝对定位和transform"><a href="#2-使用绝对定位和transform" class="headerlink" title="2. 使用绝对定位和transform"></a>2. 使用绝对定位和transform</h1><h2 id="html代码："><a href="#html代码：" class="headerlink" title="html代码："></a>html代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">&lt;div id=&quot;child&quot;&gt;</span><br><span class="line">    我是一串很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文本</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码"><a href="#css代码" class="headerlink" title="css代码"></a>css代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    background: #93BC49;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    transform: translate(0, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="3-另外一种使用绝对定位和负外边距进行垂直居中的方式"><a href="#3-另外一种使用绝对定位和负外边距进行垂直居中的方式" class="headerlink" title="3. 另外一种使用绝对定位和负外边距进行垂直居中的方式"></a>3. 另外一种使用绝对定位和负外边距进行垂直居中的方式</h1><h2 id="html代码-1"><a href="#html代码-1" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;我也是个测试DIV&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码-1"><a href="#css代码-1" class="headerlink" title="css代码"></a>css代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">　　width: 50%;</span><br><span class="line">    height: 30%;</span><br><span class="line">    background: pink;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin: -15% 0 0 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="这种方式的原理实质上和前两种相同。补充的一点是：margin的取值也可以是百分比，这时这个值规定了该元素基于父元素尺寸的百分比，可以根据实际的使用场景来决定是用具体的数值还是用百分比。"><a href="#这种方式的原理实质上和前两种相同。补充的一点是：margin的取值也可以是百分比，这时这个值规定了该元素基于父元素尺寸的百分比，可以根据实际的使用场景来决定是用具体的数值还是用百分比。" class="headerlink" title="这种方式的原理实质上和前两种相同。补充的一点是：margin的取值也可以是百分比，这时这个值规定了该元素基于父元素尺寸的百分比，可以根据实际的使用场景来决定是用具体的数值还是用百分比。"></a>这种方式的原理实质上和前两种相同。补充的一点是：margin的取值也可以是百分比，这时这个值规定了该元素基于父元素尺寸的百分比，可以根据实际的使用场景来决定是用具体的数值还是用百分比。</h3><hr>
+<h1 id="4-绝对定位结合margin-auto"><a href="#4-绝对定位结合margin-auto" class="headerlink" title="4. 绝对定位结合margin: auto"></a>4. 绝对定位结合margin: auto</h1><h3 id="html代码：-1"><a href="#html代码：-1" class="headerlink" title="html代码："></a>html代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;呆呆今天退役了(。﹏。)&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码：-1"><a href="#css代码：-1" class="headerlink" title="css代码："></a>css代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: #A1CCFE;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    margin: auto;</span><br><span class="line">    line-height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="这种实现方式的两个核心是：把要垂直居中的元素相对于父元素绝对定位，top和bottom设为相等的值，我这里设成了0，"><a href="#这种实现方式的两个核心是：把要垂直居中的元素相对于父元素绝对定位，top和bottom设为相等的值，我这里设成了0，" class="headerlink" title="这种实现方式的两个核心是：把要垂直居中的元素相对于父元素绝对定位，top和bottom设为相等的值，我这里设成了0，"></a>这种实现方式的两个核心是：把要垂直居中的元素相对于父元素绝对定位，top和bottom设为相等的值，我这里设成了0，</h2><h2 id="当然你也可以设为99999px或者-99999px无论什么，只要两者相等就行，这一步做完之后再将要居中元素的margin设为auto，这样便可以实现垂直居中了。"><a href="#当然你也可以设为99999px或者-99999px无论什么，只要两者相等就行，这一步做完之后再将要居中元素的margin设为auto，这样便可以实现垂直居中了。" class="headerlink" title="当然你也可以设为99999px或者-99999px无论什么，只要两者相等就行，这一步做完之后再将要居中元素的margin设为auto，这样便可以实现垂直居中了。"></a>当然你也可以设为99999px或者-99999px无论什么，只要两者相等就行，这一步做完之后再将要居中元素的margin设为auto，这样便可以实现垂直居中了。</h2><h2 id="被居中元素的宽高也可以不设置，但不设置的话就必须是图片这种自身就包含尺寸的元素，否则无法实现。"><a href="#被居中元素的宽高也可以不设置，但不设置的话就必须是图片这种自身就包含尺寸的元素，否则无法实现。" class="headerlink" title="被居中元素的宽高也可以不设置，但不设置的话就必须是图片这种自身就包含尺寸的元素，否则无法实现。"></a>被居中元素的宽高也可以不设置，但不设置的话就必须是图片这种自身就包含尺寸的元素，否则无法实现。</h2><hr>
+<h1 id="5-使用padding实现子元素的垂直居中"><a href="#5-使用padding实现子元素的垂直居中" class="headerlink" title="5. 使用padding实现子元素的垂直居中"></a>5. 使用padding实现子元素的垂直居中</h1><h2 id="html代码：-2"><a href="#html代码：-2" class="headerlink" title="html代码："></a>html代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;今天西安的霾严重的吓人，刚看了一眼PM2.5是422&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="css代码：-2"><a href="#css代码：-2" class="headerlink" title="css代码："></a>css代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    padding: 100px 0;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: #F7A750;</span><br><span class="line">    line-height: 50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="这种实现方式非常简单，就是给父元素设置相等的上下内边距，则子元素自然是垂直居中的，当然这时候父元素是不能设置高度的，要让它自动被填充起来，除非设置了一个正好等于上内边距-子元素高度-下内边距的值，否则无法精确的垂直居中。这种方式看似没有什么技术含量，但其实在某些场景下也是非常好用的。"><a href="#这种实现方式非常简单，就是给父元素设置相等的上下内边距，则子元素自然是垂直居中的，当然这时候父元素是不能设置高度的，要让它自动被填充起来，除非设置了一个正好等于上内边距-子元素高度-下内边距的值，否则无法精确的垂直居中。这种方式看似没有什么技术含量，但其实在某些场景下也是非常好用的。" class="headerlink" title="这种实现方式非常简单，就是给父元素设置相等的上下内边距，则子元素自然是垂直居中的，当然这时候父元素是不能设置高度的，要让它自动被填充起来，除非设置了一个正好等于上内边距+子元素高度+下内边距的值，否则无法精确的垂直居中。这种方式看似没有什么技术含量，但其实在某些场景下也是非常好用的。"></a>这种实现方式非常简单，就是给父元素设置相等的上下内边距，则子元素自然是垂直居中的，当然这时候父元素是不能设置高度的，要让它自动被填充起来，除非设置了一个正好等于上内边距+子元素高度+下内边距的值，否则无法精确的垂直居中。这种方式看似没有什么技术含量，但其实在某些场景下也是非常好用的。</h2><hr>
+<h1 id="6-设置第三方基准"><a href="#6-设置第三方基准" class="headerlink" title="6. 设置第三方基准"></a>6. 设置第三方基准</h1><h2 id="html代码：-3"><a href="#html代码：-3" class="headerlink" title="html代码："></a>html代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;base&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;今天写了第一篇博客，希望可以坚持写下去！&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码：-3"><a href="#css代码：-3" class="headerlink" title="css代码："></a>css代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">&#125;</span><br><span class="line">#base &#123;</span><br><span class="line">    height: 50%;</span><br><span class="line">    background: #AF9BD3;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: rgba(131, 224, 245, 0.6);</span><br><span class="line">    line-height: 50px;</span><br><span class="line">    margin-top: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="这种方式也非常简单，首先设置一个高度等于父元素高度一半的第三方基准元素，那么此时该基准元素的底边线自然就是父元素纵向上的中分线，做完这些之后再给要垂直居中的元素设置一个margin-top，值的大小是它自身高度的一半取负，则实现垂直居中。"><a href="#这种方式也非常简单，首先设置一个高度等于父元素高度一半的第三方基准元素，那么此时该基准元素的底边线自然就是父元素纵向上的中分线，做完这些之后再给要垂直居中的元素设置一个margin-top，值的大小是它自身高度的一半取负，则实现垂直居中。" class="headerlink" title="　这种方式也非常简单，首先设置一个高度等于父元素高度一半的第三方基准元素，那么此时该基准元素的底边线自然就是父元素纵向上的中分线，做完这些之后再给要垂直居中的元素设置一个margin-top，值的大小是它自身高度的一半取负，则实现垂直居中。"></a>　这种方式也非常简单，首先设置一个高度等于父元素高度一半的第三方基准元素，那么此时该基准元素的底边线自然就是父元素纵向上的中分线，做完这些之后再给要垂直居中的元素设置一个margin-top，值的大小是它自身高度的一半取负，则实现垂直居中。</h2><hr>
+<h1 id="7-使用flex布局"><a href="#7-使用flex布局" class="headerlink" title="7. 使用flex布局"></a>7. 使用flex布局</h1><h2 id="html代码：-4"><a href="#html代码：-4" class="headerlink" title="html代码："></a>html代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;雾霾天气，太久没有打球了&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码-2"><a href="#css代码-2" class="headerlink" title="css代码"></a>css代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="这种方式同样适用于块级元素："><a href="#这种方式同样适用于块级元素：" class="headerlink" title="这种方式同样适用于块级元素："></a>这种方式同样适用于块级元素：</h2><h2 id="html代码：-5"><a href="#html代码：-5" class="headerlink" title="html代码："></a>html代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;</span><br><span class="line">        程序员怎么才能保护好眼睛？</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码：-4"><a href="#css代码：-4" class="headerlink" title="css代码："></a>css代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: #8194AA;</span><br><span class="line">    line-height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="8-第二种使用弹性布局的方式"><a href="#8-第二种使用弹性布局的方式" class="headerlink" title="8. 第二种使用弹性布局的方式"></a>8. 第二种使用弹性布局的方式</h1><h2 id="html代码-2"><a href="#html代码-2" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;</span><br><span class="line">        答案当然是多用绿色的背景哈哈</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码：-5"><a href="#css代码：-5" class="headerlink" title="css代码："></a>css代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: #08BC67;</span><br><span class="line">    line-height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="这种方式也是首先给父元素设置display-flex，设置好之后改变主轴的方向flex-direction-column，该属性可能的取值有四个，分别如下："><a href="#这种方式也是首先给父元素设置display-flex，设置好之后改变主轴的方向flex-direction-column，该属性可能的取值有四个，分别如下：" class="headerlink" title="这种方式也是首先给父元素设置display:flex，设置好之后改变主轴的方向flex-direction: column，该属性可能的取值有四个，分别如下："></a>这种方式也是首先给父元素设置display:flex，设置好之后改变主轴的方向flex-direction: column，该属性可能的取值有四个，分别如下：</h6><p>   row（该值为默认值）：主轴为水平方向，起点在左端；<br>   row-reverse：主轴为水平方向，起点在右端；<br>   column：主轴为垂直方向，起点在上沿；<br>　 column-reverse：主轴为垂直方向，起点在下沿。</p>
+<h6 id="justify-content属性定义了项目在主轴上的对齐方式，可能的取值有五个，分别如下（不过具体的对齐方式与主轴的方向有关，以下的值都是假设主轴为从左到右的）："><a href="#justify-content属性定义了项目在主轴上的对齐方式，可能的取值有五个，分别如下（不过具体的对齐方式与主轴的方向有关，以下的值都是假设主轴为从左到右的）：" class="headerlink" title="justify-content属性定义了项目在主轴上的对齐方式，可能的取值有五个，分别如下（不过具体的对齐方式与主轴的方向有关，以下的值都是假设主轴为从左到右的）："></a>justify-content属性定义了项目在主轴上的对齐方式，可能的取值有五个，分别如下（不过具体的对齐方式与主轴的方向有关，以下的值都是假设主轴为从左到右的）：</h6><p>   flex-start（该值是默认值）：左对齐；<br>   flex-end：右对齐；<br>   center：居中对齐；<br>   space-between：两端对齐，各个项目之间的间隔均相等；<br>   space-around：各个项目两侧的间隔相等。 </p>
+<h1 id="9-还有一种在前面已经见到过很多次的方式就是使用-line-height-对单行文本进行垂直居中"><a href="#9-还有一种在前面已经见到过很多次的方式就是使用-line-height-对单行文本进行垂直居中" class="headerlink" title="9. 还有一种在前面已经见到过很多次的方式就是使用 line-height 对单行文本进行垂直居中"></a>9. 还有一种在前面已经见到过很多次的方式就是使用 line-height 对单行文本进行垂直居中</h1><h2 id="html代码：-6"><a href="#html代码：-6" class="headerlink" title="html代码："></a>html代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    我是一段测试文本</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码-3"><a href="#css代码-3" class="headerlink" title="css代码"></a>css代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> #box&#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    line-height: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="这里有一个小坑需要大家注意：line-height-行高-的值不能设为100-，我们来看看官方文档中给出的关于line-height取值为百分比时候的描述：基于当前字体尺寸的百分比行间距。所以大家就明白了，这里的百分比并不是相对于父元素尺寸而言，而是相对于字体尺寸来讲的。"><a href="#这里有一个小坑需要大家注意：line-height-行高-的值不能设为100-，我们来看看官方文档中给出的关于line-height取值为百分比时候的描述：基于当前字体尺寸的百分比行间距。所以大家就明白了，这里的百分比并不是相对于父元素尺寸而言，而是相对于字体尺寸来讲的。" class="headerlink" title="这里有一个小坑需要大家注意：line-height(行高) 的值不能设为100%，我们来看看官方文档中给出的关于line-height取值为百分比时候的描述：基于当前字体尺寸的百分比行间距。所以大家就明白了，这里的百分比并不是相对于父元素尺寸而言，而是相对于字体尺寸来讲的。"></a>这里有一个小坑需要大家注意：line-height(行高) 的值不能设为100%，我们来看看官方文档中给出的关于line-height取值为百分比时候的描述：基于当前字体尺寸的百分比行间距。所以大家就明白了，这里的百分比并不是相对于父元素尺寸而言，而是相对于字体尺寸来讲的。</h4><h1 id="10-使用-line-height-和-vertical-align-对图片进行垂直居中"><a href="#10-使用-line-height-和-vertical-align-对图片进行垂直居中" class="headerlink" title="10. 使用 line-height 和 vertical-align 对图片进行垂直居中"></a>10. 使用 line-height 和 vertical-align 对图片进行垂直居中</h1><h2 id="html代码-3"><a href="#html代码-3" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;duncan.jpeg&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css代码-4"><a href="#css代码-4" class="headerlink" title="css代码"></a>css代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    line-height: 300px;</span><br><span class="line">&#125;</span><br><span class="line">#box img &#123;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-11-22T03:34:47.628Z" itemprop="dateUpdated">2018-11-22 11:34:47</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/11/22/CSS实现垂直居中的方法总结/" target="_blank" rel="external">http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="兔子先生">
+            兔子先生
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/&title=《CSS实现垂直居中的方法总结 》 — Letme&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/&title=《CSS实现垂直居中的方法总结 》 — Letme&source=前端更新" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS实现垂直居中的方法总结 》 — Letme&url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/11/21/CSS垂直居中的11种方法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">first file</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>兔子先生 &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/&title=《CSS实现垂直居中的方法总结 》 — Letme&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/&title=《CSS实现垂直居中的方法总结 》 — Letme&source=前端更新" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS实现垂直居中的方法总结 》 — Letme&url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/22/CSS实现垂直居中的方法总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3ay27kMAwEwPn/n85eA+x6tpuU8gDKp8AZjFk6WJwWX6/4+vh0Pd35fP/vz7y/8ie+blx4eHh4i9KfHvy+oPzBT+Xmi5XXjIeHh3eb15aSfz5ZoHYTSmrAw8PD+2m8pNC86KSxxsPDw/u9vLa4/DvbFh8PDw/ve3n51+Wtdt4WJxvM9awFDw8PrztvWsWvX//3lfM9PDw8vPWp+qxpfn+glWwheRP/n2rx8PDwLvDadjaPBpL2d9Og52ExHh4e3g1eG7y2pedx8KnQAQ8PD+8erx1InTXfm1C4XdAi98XDw8Nb8NpGds+YRcZ1zIGHh4d3jZdvDPm4VXs+1Y5SRQuHh4eHd42XtK35GMF+0OrYQuPh4eFd4OU/79tseBM97L/h8XcDHh4e3gVe0vK2g1arKDZeysctBw8PD+8obxOtzgLfvI2eBRPZgAQeHh7enJeU1cLaiCFZ4tVoFx4eHt5RXhsB7Bnt0szGFOpZBjw8PLySl7+I86OyNrBoF3G44+Hh4eEd4p0trh1KODXC9Y8K8fDw8C7w8uJOBRZt+Dsb+cLDw8P7St6mnZ2NHcyC3WRbwsPDw7vNmzGSl3Vb3Kz0YWuOh4eHV/JOvaw3YWu+wSTRyWOMi4eHh3eIl//4z+8nQUP+3/1IFh4eHt7X8G5T2w2pjZLrvQUPDw9vwUsOt2Yv+lkg2zb6RT6Nh4eHd4iXxwpt+9su36kIGA8PD+8s76O88hZ51prnDXcyMouHh4d3g9e2ubMRq1mzPhtKqCcj8PDw8Ea89ng+aZE328bhSBcPDw/vGi9/KW/a33a46jW68PDw8H4XL6Hue/8i4MDDw8P7Abx8M8gb6/xFnwfNeHh4eLd5eXGb8aycvRluwMPDw7vN289tzcKIWXB8eGgADw8Pr+P9ARf5Nco4w/P8AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
