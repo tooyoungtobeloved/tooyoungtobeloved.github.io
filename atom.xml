@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-22T03:34:47.628Z</updated>
+  <updated>2018-12-13T05:35:56.534Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>响应式布局</title>
+    <link href="http://yoursite.com/2018/12/13/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2018/12/13/响应式布局/</id>
+    <published>2018-12-13T05:05:20.000Z</published>
+    <updated>2018-12-13T05:35:56.534Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="响应式设计布局原理"><a href="#响应式设计布局原理" class="headerlink" title="响应式设计布局原理"></a>响应式设计布局原理</h1><h4 id="最近在学bootstrap这个响应式前端设计的类库，于是对响应式产生疑问，那么什么是响应式设计呢"><a href="#最近在学bootstrap这个响应式前端设计的类库，于是对响应式产生疑问，那么什么是响应式设计呢" class="headerlink" title="最近在学bootstrap这个响应式前端设计的类库，于是对响应式产生疑问，那么什么是响应式设计呢"></a>最近在学bootstrap这个响应式前端设计的类库，于是对响应式产生疑问，那么什么是响应式设计呢</h4><h4 id="一般来说支持响应式布局设计的网页一般有这么一句话"><a href="#一般来说支持响应式布局设计的网页一般有这么一句话" class="headerlink" title="一般来说支持响应式布局设计的网页一般有这么一句话"></a>一般来说支持响应式布局设计的网页一般有这么一句话</h4><p>&lt;meta name=”viewport” content=”width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no”&gt;<br>我们可以对这句话的各个值一一看一下 <code>meta name=&quot;viewport&quot;</code>viewport这个单词的意思就是”视觉窗口”我理解为眼睛可见的窗口的大小<br>content=”width=device-width”    就是内容宽度设为”width=device-width”显示窗口宽度是客户端的屏幕 宽度<br>“initial-scale=1”就是设置页面初始的缩放值设置为1即不缩放<br>“maximum-scale=1” 最大缩放值为1(就是不能缩放感觉应该和后面的”user-scalable=no”)一起使用<br>“user-scalable=no”用户缩放：不允许缩放(no为不可以缩放，yes可以缩放)</p><h2 id="我理解的响应式设计"><a href="#我理解的响应式设计" class="headerlink" title="我理解的响应式设计"></a>我理解的响应式设计</h2><p>其实响应式设计无非就是设计一次网页 可以在任何大小的浏览器中使用(移动端和客户端中使用)通过css中的新增的@media screnn对网页大小进行查询<br>针对不同的页面大小写出不同的网页css样式以支持不同的网页，以前手机访问电脑端的很多网页 由于适配的问题 很多时候都会出现网页是原始大小来显示<br>拖动什么的就很不方便，于是才有的响应式网页设计的概念，一次设计可以在各种大小的屏幕中显示</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;响应式设计布局原理&quot;&gt;&lt;a href=&quot;#响应式设计布局原理&quot; class=&quot;headerlink&quot; title=&quot;响应式设计布局原理&quot;&gt;&lt;/a&gt;响应式设计布局原理&lt;/h1&gt;&lt;h4 id=&quot;最近在学bootstrap这个响应式前端设计的类库，于是对响应式产生疑问，
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CSS实现垂直居中的方法总结 </title>
